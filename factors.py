@@ -3,7 +3,8 @@ import sys
 
 
 def get_factors(number):
-    for i in range(0, 9):
+    first_factor = None
+    for i in reversed(range(0, 9)):
         if number % 10 == 0 or number % 10 == 5:
             first_factor = 5
             break
