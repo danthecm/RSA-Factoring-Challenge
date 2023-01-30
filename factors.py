@@ -4,7 +4,8 @@ import sys
 
 def get_factors(number):
     first_factor = None
-    for i in reversed(range(0, 9)):
+    step = 2 if number % 2 == 0 else 1
+    for i in reversed(range(0, 9, step)):
         if number % 10 == 0 or number % 10 == 5:
             first_factor = 5
             break
