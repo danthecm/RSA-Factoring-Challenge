@@ -1,3 +1,6 @@
+#!/usr/bin/python3
+import sys
+
 def get_factors(number):
     first_factor = None
     for i in reversed(range(0, 9)):
@@ -10,12 +13,15 @@ def get_factors(number):
     second_factor = int(number / first_factor)
     return first_factor, second_factor
 
-
-with open("test.txt", "r") as text:
-    for line in text:
-        try:
-            line = int(line.strip())
-            a, b = get_factors(line)
-            print(f"{line}={a}*{b}")
-        except ValueError:
-            continue
+filename = sys.argv[1]
+try:
+    with open(filename, "r") as text:
+        for line in text:
+            try:
+                line = int(line.strip())
+                a, b = get_factors(line)
+                print(f"{line}={a}*{b}")
+            except ValueError:
+                continue
+except FileNotFoundError:
+    print("Please enter a corect file name")
