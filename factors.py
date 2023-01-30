@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import sys
 
+
 def get_factors(number):
     first_factor = None
     for i in reversed(range(0, 9)):
@@ -13,7 +14,9 @@ def get_factors(number):
     second_factor = int(number / first_factor)
     return first_factor, second_factor
 
+
 filename = sys.argv[1]
+
 try:
     with open(filename, "r") as text:
         for line in text:
